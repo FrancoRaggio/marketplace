@@ -2,8 +2,13 @@
   <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container-fluid">
     <a class="navbar-brand title-logo d-flex flex-column me-5" href="#">
-        <img src="../img/logo.png" alt="" width="100" height="auto" class="d-inline-block align-text-top">
-        Pagá menos por viajar
+        <div v-if="isMobile" class="ext-center w-100 text-white display-6 fw-bold">
+          TURISMOCITY
+        </div>
+        <div v-else>
+          <img src="../img/logo.png" alt="" width="100" height="auto" class="d-inline-block align-text-top">
+          Pagá menos por viajar
+        </div>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -94,11 +99,9 @@
 
 export default {
   name: 'Navbar',
-  data() {
-    return{
-
-    }
-  },
+  props: {
+    isMobile: Boolean
+  }
 }
 </script>
 

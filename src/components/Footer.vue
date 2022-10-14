@@ -1,6 +1,6 @@
 <template>
 <footer>
-    <div v-if="isMobile" class="row">
+    <div v-if="isMobile" class="p-2">
         <h1 class="title-mobile">TURISMOCITY</h1>
         <div>
             <dl class="d-flex justify-content-evenly mb-2">
@@ -132,26 +132,21 @@ export default {
 
 <style scoped>
 .title-mobile {
-    font-family: 'BryantLG';
-    font-style: normal;
-    font-weight: 700;
     font-size: 23px;
     line-height: 26px;
     text-align: center;
-    color: #FFFFFF;
-    
 }
 .subtitle-mobile {
-    font-family: 'Roboto';
-    font-style: normal;
     font-weight: 400;
     font-size: 13px;
     line-height: 157%;
-    color: #FFFFFF;
 }
 footer {
     background: #2C5FA1;
     color: #FFFFFF;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
 }
 
 </style>

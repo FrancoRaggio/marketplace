@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <Navbar />
-      <div class="position-relative">
-      <img src="../img/fondo_cuarentena.png" alt="" width="100%" height="223" />
-        <h1 class="title-head position-absolute" :class="isMobile ? 'title-head-mobile text-center' : 'title-head-desktop'" >Ofertas para aprovechar desde tu casa</h1>
+  <div class="text-style">
+    <Navbar :isMobile="isMobile"/>
+      <div class="position-relative header-img">
+      <img src="../img/fondo_cuarentena.png" class="w-100" height="100%" alt="" />
+        <h1 class="position-absolute top-50 start-50 translate-middle text-center w-100 text-white display-6 fw-bold">Ofertas para aprovechar desde tu casa</h1>
       </div>
-    <Seccion :item="item" v-for="(item, index) in products" :key="index" class="m-2" :isMobile="isMobile"/>
+    <Seccion :item="item" v-for="(item, index) in products" :key="index" class="m-2"/>
     <Footer :isMobile="isMobile"/>
   </div>
 </template>
@@ -41,33 +41,9 @@ export default {
 </script>
 
 <style scoped>
-  /* .title{
-    top:50%;
-    left: 30%;
-    right: 10%;
-    transform: translateX(-50%);
-  } */
-  .title-head {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
+@media (max-width: 768px) { 
+  .header-img {
+    height: 162px;
   }
-  .title-head-desktop {
-    width: 100%;
-    height: auto;
-    font-size: 60px;
-    line-height: 65px;
-
-    color: #FFFF;
-
-  }
-  .title-head-mobile {
-    top:50%;
-    left: auto;
-    right: auto;
-    transform: translateY(-50%);
-    font-size: 30px;
-    line-height: 35px;
-    color: #FFFFFF;
-  }
+}
 </style>

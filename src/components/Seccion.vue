@@ -1,16 +1,16 @@
 <template>
-  <div :class="isMobile ? '' : ''">
-    <div :class="isMobile ? 'text-center' : 'd-inline-flex'">
-      <div :class="isMobile ? 'col-12' : 'col-6'">
+  <div class="header">
+    <div class="info-seccion">
+      <div class="col-12 col-md-6">
         <h1 class="item-title">{{item.title}}</h1>
         <p class="item-subtitle">{{item.subtitle}}</p>
       </div>
-      <div :class="isMobile ? 'mb-4' : 'ms-auto'">
+      <div class="img-seccion">
         <img  :src="item.image" alt="" width="215px" height="76px">
       </div>
     </div>
-    <div class="row row-cols-md-4 g-2" :class="isMobile ? 'row-cols-2' : 'row-cols-1'">
-      <Card v-for="(link, index) in item.links" :key="index" :link="link" :isMobile="isMobile"/>
+    <div class="row row-cols-md-4 row-cols-2 row-cols-md-1 g-2">
+      <Card v-for="(link, index) in item.links" :key="index" :link="link"/>
     </div>
 
     <div class="d-flex justify-content-center my-5">
@@ -28,24 +28,31 @@ export default {
     Card
   },
   props: {
-    item: [],
-    isMobile: Boolean
+    item: []
   }
 }
 </script>
 
 <style scoped>
-  .item-title {
+@media (max-width: 768px) { 
+  .info-seccion {
+    text-align: center;
+  }
+  .img-seccion {
+    margin-bottom: 1.5rem;
+  }
+}
+  .header {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
+  }
+  .item-title {
     font-size: 23px;
     line-height: 27px;
     color: #1D4D8B;
   }
   .item-subtitle {
-    font-family: 'Roboto';
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
@@ -54,8 +61,6 @@ export default {
   }
 
   .item-button {
-    font-family: 'Roboto';
-    font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 23px;
