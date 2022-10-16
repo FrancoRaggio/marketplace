@@ -1,20 +1,20 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand title-logo d-flex flex-column me-5" href="#">
-        <div v-if="isMobile" class="ext-center w-100 text-white display-6 fw-bold">
+  <div class="container-fluid flex-row-reverse flex-md-row">
+    <a class="navbar-brand title-logo me-auto text-center" href="#">
+        <span class="w-100 text-white display-5 isMobile invisible fs-1 fw-bold lh-base">
           TURISMOCITY
-        </div>
-        <div v-else>
+        </span>
+        <div class="isDesktop">
           <img src="../img/logo.png" alt="" width="100" height="auto" class="d-inline-block align-text-top">
           Pagá menos por viajar
         </div>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5 mt-2">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-md-5 mt-md-2">
         <li class="nav-item active">
           <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M14.6109 17.35C14.6599 17.4316 14.7234 17.4787 14.8051 17.495C14.8867 17.5113 14.9593 17.4878 15.0246 17.4225L15.8991 16.5489C16.0605 16.3876 16.1168 16.1846 16.0696 15.9417L14.2227 8.71549C14.1574 8.48893 14.2154 8.28775 14.3932 8.10832L17.4285 5.07609C17.59 4.91478 17.7115 4.7281 17.7932 4.51785C18.0689 3.88712 18.0689 3.38507 17.7932 3.01352C17.7605 2.94827 17.7206 2.89208 17.6716 2.84314C17.6226 2.79421 17.5591 2.74527 17.4775 2.69815C17.4612 2.68184 17.4376 2.66552 17.4049 2.64921C17.3723 2.6329 17.3323 2.61659 17.2834 2.60028C17.1382 2.51872 16.9604 2.4879 16.75 2.50422C16.5395 2.52053 16.3617 2.55315 16.2166 2.60209L15.9735 2.69996C15.7793 2.79783 15.6015 2.92652 15.4401 3.08783L12.4011 6.12006C12.2233 6.29768 12.0201 6.35387 11.7934 6.29043L4.55983 4.44717C4.31672 4.39823 4.11533 4.45623 3.95205 4.61754L3.07757 5.49114C3.01225 5.55639 2.98867 5.62888 3.00499 5.70863C3.02132 5.79019 3.07031 5.85363 3.15014 5.90257L9.09915 8.9348C9.19712 8.96742 9.24974 9.02723 9.257 9.11604C9.26425 9.20485 9.23704 9.28098 9.17172 9.34622L6.81861 11.6988C6.64081 11.8764 6.43761 11.9489 6.21264 11.9163L5.16943 11.7459C4.94264 11.7133 4.74126 11.7858 4.56164 11.9634L3.97926 12.5452C3.91395 12.6105 3.89036 12.683 3.90669 12.7627C3.92302 12.8443 3.972 12.9077 4.05183 12.9566L5.99492 14.0242C6.20538 14.1365 6.36685 14.2997 6.48115 14.5099L7.54976 16.4492C7.59875 16.5308 7.66224 16.5779 7.74389 16.5942C7.82553 16.6105 7.8981 16.587 7.9616 16.5217L8.54398 15.9399C8.72178 15.7623 8.79435 15.5593 8.7617 15.3346L8.59116 14.2924C8.5585 14.0659 8.63107 13.8647 8.80887 13.687L11.1638 11.3345C11.2454 11.2529 11.3253 11.2203 11.4069 11.2366C11.4886 11.2529 11.5448 11.3091 11.5775 11.407L14.6109 17.35Z" fill="white"/>
@@ -99,27 +99,49 @@
 
 export default {
   name: 'Navbar',
-  props: {
-    isMobile: Boolean
-  }
 }
 </script>
 
 <style scoped>
-.title-logo {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 11px;
-  color: #8CC2FF;
-}
-nav {
-  background: #1D4D8B;
-}
-li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: 1rem;
-}
+  .title-logo {
+    font-family: 'BryantLG';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 11px;
+    color: #8CC2FF;
+  }
+  nav {
+    background: #1D4D8B;
+  }
+  li {
+    display: flex;
+    align-items: center;
+
+  }
+  @media (max-width: 768px) { 
+    li > a{
+      margin-left: 0.5rem;
+    }
+    .isMobile {
+      visibility: visible !important;
+    }
+    .isDesktop {
+      visibility: hidden !important;
+      display: none;
+    }
+  }
+  @media (min-width: 768px) { 
+    .isMobile {
+      visibility: hidden !important;
+      display: none;
+    }
+    .isDesktop {
+      visibility: visible !important;
+    }
+    li {
+      flex-direction: column;
+      margin-right: 1rem;
+    }
+  } 
+
 </style>

@@ -1,6 +1,6 @@
 <template>
 <footer>
-    <div v-if="isMobile" class="p-2">
+    <div class="p-2 isMobile">
         <h1 class="title-mobile">TURISMOCITY</h1>
         <div>
             <dl class="d-flex justify-content-evenly mb-2">
@@ -89,7 +89,7 @@
         </div>
     </div>
 
-    <div class="pt-3" v-else>
+    <div class="pt-3 isDesktop">
     <div class="col-6">
         <dl>
             <dt>Sobre Turismocity.com</dt>
@@ -131,22 +131,40 @@ export default {
 </script>
 
 <style scoped>
-.title-mobile {
-    font-size: 23px;
-    line-height: 26px;
-    text-align: center;
-}
-.subtitle-mobile {
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 157%;
-}
-footer {
-    background: #2C5FA1;
-    color: #FFFFFF;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-}
-
+    .title-mobile {
+        font-size: 23px;
+        line-height: 26px;
+        text-align: center;
+    }
+    .subtitle-mobile {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 157%;
+    }
+    footer {
+        background: #2C5FA1;
+        color: #FFFFFF;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+    }
+    @media (max-width: 768px) { 
+        .isMobile {
+            visibility: visible !important;
+        }
+        .isDesktop {
+            /* visibility: hidden !important; */
+            display: none;
+        }
+    }
+    @media (min-width: 768px) { 
+        .isMobile {
+            /* visibility: hidden !important; */
+            display: none;
+        }
+        .isDesktop {
+            visibility: visible !important;
+            display: block;
+        }
+    } 
 </style>
