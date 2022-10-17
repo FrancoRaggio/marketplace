@@ -1,15 +1,15 @@
 <template>
-  <div class="header">
+  <div>
     <div class="info-seccion">
-      <div class="col-12 col-md-6">
-        <h1 class="item-title">{{item.title}}</h1>
+      <div class="col-12 col-md-10 text-md-start">
+        <h1 class="item-title fw-bold">{{item.title}}</h1>
         <p class="item-subtitle">{{item.subtitle}}</p>
       </div>
       <div class="img-seccion">
-        <img  :src="item.image" alt="" width="215px" height="76px">
+        <img :src="item.image" alt="" class="h-auto">
       </div>
     </div>
-    <div class="row row-cols-md-4 row-cols-2 row-cols-md-1 g-2">
+    <div class="row row-cols-md-4 row-cols-2 g-2">
       <Card v-for="(link, index) in item.links" :key="index" :link="link"/>
     </div>
 
@@ -34,30 +34,21 @@ export default {
 </script>
 
 <style scoped>
-@media (max-width: 768px) { 
   .info-seccion {
+    display: flex;
     text-align: center;
-  }
-  .img-seccion {
-    margin-bottom: 1.5rem;
-  }
-}
-  .header {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
+    align-items: center;
+    justify-content: space-between;
+    color: #1D4D8B;
   }
   .item-title {
     font-size: 23px;
     line-height: 27px;
-    color: #1D4D8B;
   }
   .item-subtitle {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-
-    color: #1D4D8B;
   }
 
   .item-button {
@@ -70,5 +61,22 @@ export default {
     color: #FFFFFF;
     border: 1rem solid transparent;
     text-decoration: none;
+  }
+  @media (max-width: 768px) { 
+    .info-seccion {
+      display: block;
+    }
+    img {
+      width: 215px;
+      height: 76px;
+    }
+    .img-seccion {
+      margin-bottom: 1.5rem;
+    }
+  }
+  @media (min-width: 768px) { 
+    img {
+      width: 100%;
+    }
   }
 </style>

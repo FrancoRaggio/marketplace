@@ -1,7 +1,7 @@
 <template>
-<footer>
+<footer class="py-5">
     <div class="p-2 isMobile">
-        <h1 class="title-mobile">TURISMOCITY</h1>
+        <h1 class="title-mobile mb-4">TURISMOCITY</h1>
         <div>
             <dl class="d-flex justify-content-evenly mb-2">
                 <dd>
@@ -89,35 +89,33 @@
         </div>
     </div>
 
-    <div class="pt-3 isDesktop">
-    <div class="col-6">
-        <dl>
-            <dt>Sobre Turismocity.com</dt>
-            <dd>Quienes somos</dd>
-            <dd>Feriados Nacionales</dd>
-            <dd>Afiliados.</dd>
-            <dd>Promocionar Hotel</dd>
-        </dl>
+    <div class="pt-3 isDesktop d-flex justify-content-around">
+        <div class="col-md-2">
+            <dl>
+                <dt>Sobre Turismocity.com</dt>
+                <dd>Quienes somos</dd>
+                <dd>Feriados Nacionales</dd>
+                <dd>Afiliados.</dd>
+                <dd>Promocionar Hotel</dd>
+            </dl>
+        </div>
+        <div class="col-md-2">
+            <dl>
+                <dt>Soporte</dt>
+                <dd>Preguntas frecuentes</dd>
+                <dd>Contacto</dd>
+                <dd>Política de privacidad</dd>
+                <dd>Términos y condiciones</dd>
+            </dl>
+        </div>
+        <div class="d-flex align-items-center">
+            <dl>
+                <dd>Copyright 2021 Turismocity.</dd>
+                <dd>Todos los derechos reservados.</dd>
+            </dl>
+            <img src="../img/Screen Shot 2021-08-03 at 11.38 1.png" class="img-fluid" alt="">
+        </div>
     </div>
-    <div class="col-6">
-        <dl>
-            <dt>Soporte</dt>
-            <dd>Preguntas frecuentes</dd>
-            <dd>Contacto</dd>
-            <dd>Política de privacidad</dd>
-            <dd>Términos y condiciones</dd>
-        </dl>
-    </div>
-    <div class="col-6">
-        <dl>
-            <dd>Copyright 2021 Turismocity.</dd>
-            <dd>Todos los derechos reservados.</dd>
-        </dl>
-    </div>
-    <div class="col-6">
-        <img src="../img/Screen Shot 2021-08-03 at 11.38 1.png" alt="">
-    </div>
-</div>
 </footer>
 </template>
 <script>
@@ -131,40 +129,38 @@ export default {
 </script>
 
 <style scoped>
-    .title-mobile {
-        font-size: 23px;
-        line-height: 26px;
-        text-align: center;
-    }
-    .subtitle-mobile {
-        font-weight: 400;
-        font-size: 13px;
-        line-height: 157%;
-    }
     footer {
         background: #2C5FA1;
         color: #FFFFFF;
         font-family: 'Roboto';
         font-style: normal;
-        font-weight: 700;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 28px;
     }
     @media (max-width: 768px) { 
         .isMobile {
             visibility: visible !important;
         }
+        .isMobile > .title-mobile {
+            font-size: 23px;
+            line-height: 26px;
+            text-align: center;
+        }
+        .isMobile > .subtitle-mobile {
+            font-size: 13px;
+        }
         .isDesktop {
-            /* visibility: hidden !important; */
-            display: none;
+            display: none !important;
+            visibility: hidden !important;
         }
     }
     @media (min-width: 768px) { 
         .isMobile {
-            /* visibility: hidden !important; */
             display: none;
         }
         .isDesktop {
             visibility: visible !important;
-            display: block;
         }
     } 
 </style>

@@ -5,7 +5,7 @@
       <img src="../img/fondo_cuarentena.png" class="w-100" height="100%" alt="" />
         <h1 class="position-absolute top-50 start-50 translate-middle text-center w-100 text-white display-6 fw-bold">Ofertas para aprovechar desde tu casa</h1>
       </div>
-    <Seccion :item="item" v-for="(item, index) in products" :key="index" class="m-2"/>
+    <Seccion :item="item" v-for="(item, index) in products" :key="index" class="m-2 m-md-5"/>
     <Footer/>
   </div>
 </template>
@@ -28,11 +28,6 @@ export default {
       products: []
     }
   },
-  // computed: {
-  //   isMobile: function () { 
-  //     return !window.matchMedia("(min-width: 764px)").matches
-  //   }
-  // },
   async mounted() {
     const { data } = await axios.get('https://api.turismocity.com/cuarentena/products');
     this.products = data;
@@ -41,7 +36,13 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+  font-size: 60px;
+}
 @media (max-width: 768px) { 
+  h1 {
+    font-size: 30px;
+  }
   .header-img {
     height: 162px;
   }
