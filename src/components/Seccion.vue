@@ -16,6 +16,7 @@
     <div class="d-flex justify-content-center my-5">
       <a class="item-button" :href="item.home">Ver más opciones en <strong>{{item.name}}</strong></a>
     </div>
+    <hr class="bg-grey" v-if="lastItem !== true">
   </div>
 </template>
 
@@ -28,7 +29,8 @@ export default {
     Card
   },
   props: {
-    item: []
+    item: {},
+    lastItem: Boolean
   }
 }
 </script>

@@ -21,8 +21,8 @@ export default {
     }
   },
   props: {
-        link: []
-    }
+    link: {}
+  }
 }
 </script>
 
