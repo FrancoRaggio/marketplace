@@ -18,7 +18,7 @@
         >Ver más opciones en <strong>{{ item.name }}</strong></a
       >
     </div>
-    <hr class="bg-grey" v-if="lastItem !== true" />
+    <hr class="bg-grey" v-if="!lastItem" />
   </div>
 </template>
 
